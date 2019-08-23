@@ -1,18 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {Injector, NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {App1Component} from './app1/app1.component';
+import {createCustomElement} from '@angular/elements';
 
 @NgModule({
   declarations: [
-    AppComponent
+    App1Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [App1Component]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    const app1 = createCustomElement(App1Component, {injector});
+    customElements.define('app1', app1);
+  }
+
+}
