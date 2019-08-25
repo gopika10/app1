@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "app-two": [
+        "dist/app-two"
+      ],
+      "app-two/*": [
+        "dist/app-two/*"
+      ],
+      "mf-sidebar": [
+        "dist/mf-sidebar"
+      ],
+      "mf-sidebar/*": [
+        "dist/mf-sidebar/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

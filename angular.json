@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-one": {
+    "mf-sidebar": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-one",
+            "outputPath": "dist/mf-sidebar",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-one:build"
+            "browserTarget": "mf-sidebar:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-one:build:production"
+              "browserTarget": "mf-sidebar:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-one:build"
+            "browserTarget": "mf-sidebar:build"
           }
         },
         "test": {
@@ -115,15 +115,51 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app-one:serve"
+            "devServerTarget": "mf-sidebar:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "app-one:serve:production"
+              "devServerTarget": "mf-sidebar:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "app-one"
+    },
+    "MfSidebar": {
+      "projectType": "library",
+      "root": "projects/mf-sidebar",
+      "sourceRoot": "projects/mf-sidebar/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mf-sidebar/tsconfig.lib.json",
+            "project": "projects/mf-sidebar/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mf-sidebar/src/test.ts",
+            "tsConfig": "projects/mf-sidebar/tsconfig.spec.json",
+            "karmaConfig": "projects/mf-sidebar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mf-sidebar/tsconfig.lib.json",
+              "projects/mf-sidebar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+   },
+  "defaultProject": "mf-sidebar"
 }

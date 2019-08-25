@@ -2,24 +2,24 @@ import {BrowserModule} from '@angular/platform-browser';
 import {Injector, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
-import {AppOneComponent} from './app-one/app-one.component';
+import {MfSidebarComponent} from './mf-sidebar/mf-sidebar.component';
 import {createCustomElement} from '@angular/elements';
 
 @NgModule({
   declarations: [
-    AppOneComponent
+    MfSidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppOneComponent]
+  bootstrap: [MfSidebarComponent]
 })
-export class AppOneModule {
+export class MfSidebarModule {
   constructor(private injector: Injector) {
-    const app1 = createCustomElement(AppOneComponent, {injector});
-    customElements.define('app-one', app1);
+    const app1 = createCustomElement(MfSidebarComponent, {injector});
+    customElements.define('mf-sidebar', app1);
   }
 
 }
