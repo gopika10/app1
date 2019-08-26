@@ -14,6 +14,9 @@ import {createCustomElement} from '@angular/elements';
     AppRoutingModule
   ],
   providers: [],
+  exports: [
+    MfSidebarComponent
+  ],
   bootstrap: [MfSidebarComponent]
 })
 export class MfSidebarModule {
