@@ -2,12 +2,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {Injector, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
-import {MfSidebarComponent} from './mf-sidebar/mf-sidebar.component';
+import {MfDevelopersComponent} from './mf-developers/mf-developers.component';
 import {createCustomElement} from '@angular/elements';
+import {DeveloperDetailComponent} from './mf-developers/developers/developer-detail/developer-detail.component';
+import {DevelopersComponent} from './mf-developers/developers/developers.component';
 
 @NgModule({
   declarations: [
-    MfSidebarComponent
+    MfDevelopersComponent,
+    DevelopersComponent,
+    DeveloperDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -15,14 +19,16 @@ import {createCustomElement} from '@angular/elements';
   ],
   providers: [],
   exports: [
-    MfSidebarComponent
+    MfDevelopersComponent,
+    DevelopersComponent,
+    DeveloperDetailComponent
   ],
-  bootstrap: [MfSidebarComponent]
+  bootstrap: [MfDevelopersComponent]
 })
-export class MfSidebarModule {
+export class MfDeveloperModule {
   constructor(private injector: Injector) {
-    const app1 = createCustomElement(MfSidebarComponent, {injector});
-    customElements.define('mf-sidebar', app1);
+    const mfDevelopers = createCustomElement(MfDevelopersComponent, {injector});
+    customElements.define('mf-developers', mfDevelopers);
   }
 
 }

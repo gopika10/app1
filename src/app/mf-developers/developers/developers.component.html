@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let developer of developers">
+    <div>
+      <h5><a routerLink="/apps/{{developer.devId}}">{{developer.name}}</a></h5>
+      <span>{{developer.description}}</span>
+    </div>
+  </li>
+</ul>

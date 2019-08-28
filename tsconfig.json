@@ -19,17 +19,11 @@
       "dom"
     ],
     "paths": {
-      "app-two": [
-        "dist/app-two"
+      "mf-developers": [
+        "dist/mf-developers"
       ],
-      "app-two/*": [
-        "dist/app-two/*"
-      ],
-      "mf-sidebar": [
-        "dist/mf-sidebar"
-      ],
-      "mf-sidebar/*": [
-        "dist/mf-sidebar/*"
+      "mf-developers/*": [
+        "dist/mf-developers/*"
       ]
     }
   },
